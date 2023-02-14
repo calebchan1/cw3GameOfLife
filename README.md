@@ -1,5 +1,3 @@
-# cw3LifeForm
-
 # Game Of Life
 A Life (Game of Life) simulator, first described by British mathematician John Horton Conway in 1970.
 
