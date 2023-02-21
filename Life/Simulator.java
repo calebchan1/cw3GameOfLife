@@ -8,8 +8,8 @@ import java.awt.Color;
  * A Life (Game of Life) simulator, first described by British mathematician
  * John Horton Conway in 1970.
  *
- * @author David J. Barnes, Michael Kölling & Jeffery Raphael
- * @version 2022.01.06 (1)
+ * @author Caleb Chan, Alexander Wickman | original:David J. Barnes, 
+ * Michael Kölling & Jeffery Raphael
  */
 
 public class Simulator {

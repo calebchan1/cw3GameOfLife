@@ -8,8 +8,8 @@ import java.util.Random;
  * bacteria, they only have 500-1000 genes! For comparison, fruit flies have
  * about 14,000 genes.
  *
- * @author David J. Barnes, Michael Kölling & Jeffery Raphael
- * @version 2022.01.06 (1)
+ * @author Caleb Chan, Alexander Wickman | original:David J. Barnes, 
+ * Michael Kölling & Jeffery Raphael
  */
 
 public class Mycoplasma extends Cell {
@@ -27,13 +27,25 @@ public class Mycoplasma extends Cell {
     /**
      * This is how the Mycoplasma decides if it's alive or not
      */
-     public void act() {
-       List<Cell> neighbours = getField().getLivingNeighbours(getLocation());
-       setNextState(false);
-
-       if (isAlive()) {
-         if (neighbours.size() > 1)
-           setNextState(true);
-       }
-     }
+    public void act() {
+        List<Cell> neighbours = getField().getLivingNeighbours(getLocation());
+        //assume all cells will not live onto next state
+        setNextState(false);
+        if (isAlive()) {
+            //if cell has fewer than two neighbours it will die
+            if (neighbours.size() < 2)
+                setDead();
+            //if cell has two or more live nieghbours it will live on to next gen
+            else if (neighbours.size()==2 || neighbours.size()==3)
+                setNextState(true);
+            //if cell has more than three neighbours it will die
+            else 
+                setDead();
+        }
+        else{
+            //dead cell becomes alive if has exactly three neighbours
+            if (neighbours.size() == 3) 
+                setNextState(true);
+        }
+    }
 }
