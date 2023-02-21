@@ -21,6 +21,10 @@ public class Simulator {
 
     // The probability that a Mycoplasma is alive
     private static final double MYCOPLASMA_ALIVE_PROB = 0.1;
+     // The probability that a Flavobacterium is alive
+    private static final double FLAVOBACTERIUM_ALIVE_PROB = 0.01;
+    // The probability that a Flavobacterium is alive
+    private static final double INFLUENZA_ALIVE_PROB = 0.02;
 
     // List of cells in the field.
     private List<Cell> cells;
@@ -38,8 +42,8 @@ public class Simulator {
      * Execute simulation
      */
     public static void main(String[] args) {
-      Simulator sim = new Simulator();
-      sim.simulate(100);
+        Simulator sim = new Simulator();
+        sim.simulate(100);
     }
 
     /**
@@ -105,7 +109,7 @@ public class Simulator {
         }
 
         for (Cell cell : cells) {
-          cell.updateState();
+            cell.updateState();
         }
         view.showStatus(generation, field);
     }
@@ -126,23 +130,43 @@ public class Simulator {
      * Randomly populate the field live/dead life forms
      */
     private void populate() {
-      Random rand = Randomizer.getRandom();
-      field.clear();
-      for (int row = 0; row < field.getDepth(); row++) {
-        for (int col = 0; col < field.getWidth(); col++) {
-          Location location = new Location(row, col);
-          Mycoplasma myco = new Mycoplasma(field, location, Color.ORANGE);
-          if (rand.nextDouble() <= MYCOPLASMA_ALIVE_PROB) {
-            cells.add(myco);
-          }
-          else {
-            myco.setDead();
-            cells.add(myco);
-          }
-        }
-      }
-    }
+        Random rand = Randomizer.getRandom();
+        field.clear();
+        for (int row = 0; row < field.getDepth(); row++) {
+            for (int col = 0; col < field.getWidth(); col++) {
+                //adding mycoplasma
+                Location location = new Location(row, col);
+                Mycoplasma myco = new Mycoplasma(field, location, Color.ORANGE);
+                if (rand.nextDouble() <= MYCOPLASMA_ALIVE_PROB) {
+                    cells.add(myco);
+                }
+                else {
+                    myco.setDead();
+                    cells.add(myco);
+                    //adding flavobacterium if dead cell was created
+                    Flavobacterium flavo = new Flavobacterium(field, location, Color.GREEN);
+                    if (rand.nextDouble() <= FLAVOBACTERIUM_ALIVE_PROB) {
+                        cells.add(flavo);
+                    }
+                    else {
+                        flavo.setDead();
+                        cells.add(flavo);
+                        //adding flavobacterium if dead cell was created
+                        Influenza infl = new Influenza(field, location, Color.LIGHT_GRAY);
+                        if (rand.nextDouble() <= INFLUENZA_ALIVE_PROB) {
+                            cells.add(infl);
+                        }
+                        else {
+                            infl.setDead();
+                            cells.add(infl);
+                        }
+                    }
+                }
 
+            }
+        }
+
+    }
     /**
      * Pause for a given time.
      * @param millisec  The time to pause for, in milliseconds

@@ -4,9 +4,6 @@ import java.util.Random;
 
 /**
  * Simplest form of life.
- * Fun Fact: Flavobacterium are one of the simplest forms of life.  A type of
- * bacteria, they only have 500-1000 genes! For comparison, fruit flies have
- * about 14,000 genes.
  *
  * This class is the flavobacterium class, which is a special cell that changes
  * colour in its rule set
@@ -34,13 +31,35 @@ public class Flavobacterium extends Cell {
      * If no neighbours it dies
      * If 2 or more neighbours it lives on and changes to pink
      * If 1 neighbour it lives on and changes to red
+     * If bacteria is dead and there are exactly 2 neighbours, bacteria comes
+     * back to life
      */
     public void act() {
         List<Cell> neighbours = getField().getLivingNeighbours(getLocation());
         //assume all cells will not live onto next state
         setNextState(false);
         if (isAlive()) {
+            if (neighbours.size()==1 || neighbours.size()==2){
+                setNextState(true);
+                if (neighbours.size() == 1)
+                //one neighbour, changes to red
+                setColor(Color.RED);
+                else
+                //two or more neighbours, changes to pink
+                setColor(Color.PINK);
+            }
+            else{
+                //no neighbours, dies
+                setNextState(false);
+                setDead();
+            }
             
+        }
+        else{
+            //when flavobacterium is dead and there are exactly three neighbours
+            //flavobactierum revives
+            if (neighbours.size() == 3)
+                setNextState(true);
         }
     }
 }

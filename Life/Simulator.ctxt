@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Simulator
-comment0.text=\r\n\ A\ Life\ (Game\ of\ Life)\ simulator,\ first\ described\ by\ British\ mathematician\r\n\ John\ Horton\ Conway\ in\ 1970.\r\n\r\n\ @author\ David\ J.\ Barnes,\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n\ @version\ 2022.01.06\ (1)\r\n
+comment0.text=\r\n\ A\ Life\ (Game\ of\ Life)\ simulator,\ first\ described\ by\ British\ mathematician\r\n\ John\ Horton\ Conway\ in\ 1970.\r\n\r\n\ @author\ Caleb\ Chan,\ Alexander\ Wickman\ |\ original\:David\ J.\ Barnes,\ \r\n\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment1.text=\r\n\ Execute\ simulation\r\n
