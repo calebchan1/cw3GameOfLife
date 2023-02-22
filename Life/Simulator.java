@@ -20,11 +20,11 @@ public class Simulator {
     private static final int DEFAULT_DEPTH = 80;
 
     // The probability that a Mycoplasma is alive
-    private static final double MYCOPLASMA_ALIVE_PROB = 0.1;
+    private static final double MYCOPLASMA_ALIVE_PROB = 0.2;
      // The probability that a Flavobacterium is alive
-    private static final double FLAVOBACTERIUM_ALIVE_PROB = 0.01;
+    private static final double FLAVOBACTERIUM_ALIVE_PROB = 0.05;
     // The probability that a Flavobacterium is alive
-    private static final double INFLUENZA_ALIVE_PROB = 0.02;
+    private static final double INFLUENZA_ALIVE_PROB = 0.05;
 
     // List of cells in the field.
     private List<Cell> cells;
@@ -144,7 +144,7 @@ public class Simulator {
                     myco.setDead();
                     cells.add(myco);
                     //adding flavobacterium if dead cell was created
-                    Flavobacterium flavo = new Flavobacterium(field, location, Color.GREEN);
+                    Flavobacterium flavo = new Flavobacterium(field, location, Color.RED);
                     if (rand.nextDouble() <= FLAVOBACTERIUM_ALIVE_PROB) {
                         cells.add(flavo);
                     }

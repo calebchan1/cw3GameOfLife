@@ -49,7 +49,7 @@ public class Influenza extends Cell {
             setColor(Color.GRAY);
             //if no neighbours, virus dies
             if (neighbours.size() == 1)
-            setDead();
+            setNextState(false);
             
         }
         else{

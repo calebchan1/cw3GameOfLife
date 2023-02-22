@@ -51,7 +51,6 @@ public class Flavobacterium extends Cell {
             else{
                 //no neighbours, dies
                 setNextState(false);
-                setDead();
             }
             
         }
