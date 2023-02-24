@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Whiteblood
+comment0.text=\r\n\ Simplest\ form\ of\ life.\r\n\r\n\ The\ white\ blood\ cell\ works\ to\ target\ bacteria\ and\ viruses\ that\ are\ known\r\n\ to\ its\ immune\ system.\ In\ this\ simulation,\ we\ assume\ the\ white\ blood\ cell\r\n\ only\ knows\ to\ target\ the\ influenza\ cell.\r\n\r\n\ @author\ Caleb\ Chan,\ Alexander\ Wickman\ |\ original\:David\ J.\ Barnes,\ \r\n\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n
+comment1.params=field\ location\ col
+comment1.target=Whiteblood(Field,\ Location,\ java.awt.Color)
+comment1.text=\r\n\ Create\ a\ new\ Whiteblood.\r\n\r\n\ @param\ field\ The\ field\ currently\ occupied.\r\n\ @param\ location\ The\ location\ within\ the\ field.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ This\ is\ how\ the\ Whiteblood\ decides\ if\ it's\ alive\ or\ not.\r\n\ The\ whiteblood\ cell\ targets\ surrounding\ alive\ influenza\ cells.\r\n\ It\ will\ only\ remain\ alive\ if\ it\ has\ two\ or\ three\ neighbours.\ If\r\n\ it\ has\ 4\ neighbours\ it\ will\ die.\r\n\ \r\n
+numComments=3

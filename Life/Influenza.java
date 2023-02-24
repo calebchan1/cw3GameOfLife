@@ -9,8 +9,7 @@ import java.util.Random;
  * 
  * This class is the flavobacterium class, which is a special cell that
  * changes behaviour as time progresses. Influenza is initially dead
- * for two generations, then becomes alive in the host location killing
- * other cells.
+ * for three generations, then becomes alive.
  * 
  *
  * @author Caleb Chan, Alexander Wickman | original:David J. Barnes, 
@@ -18,7 +17,8 @@ import java.util.Random;
  */
 
 public class Influenza extends Cell {
-    private int genCounts = 2;
+    //initial generation counts before becoming alive
+    private int genCounts = 3;
     
     /**
      * Create a new Influenza.
@@ -39,21 +39,18 @@ public class Influenza extends Cell {
         List<Cell> neighbours = getField().getLivingNeighbours(getLocation());
         //after two generation counts virus becomes alive if it has three neighbours
         if (genCounts == 1 && neighbours.size() == 3){
+            //comes alive next generation, if it has three neighbours
             setNextState(true);
         }
-        else if (genCounts ==2){
+        else if (genCounts ==2 || genCounts == 3){
             genCounts-=1;
             return;
         }
         if (isAlive()){
             setColor(Color.GRAY);
-            //if 2 or less neighbours, influenza dies
-            if (neighbours.size() == 1)
-            setNextState(false);
-            //if
+            //influenza dies if it has 2 or less neighbours
             if (neighbours.size() <=2)
             setNextState(false);
-            
         }
     }
 }

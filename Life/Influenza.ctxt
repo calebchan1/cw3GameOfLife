@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Influenza
-comment0.text=\r\n\ Simplest\ form\ of\ life.\r\n\ \r\n\ This\ class\ is\ the\ influenza\ class\r\n\ \r\n\ This\ class\ is\ the\ flavobacterium\ class,\ which\ is\ a\ special\ cell\ that\r\n\ changes\ behaviour\ as\ time\ progresses.\ Influenza\ is\ initially\ dead\r\n\ for\ two\ generations,\ then\ becomes\ alive\ in\ the\ host\ location\ killing\r\n\ other\ cells.\r\n\ \r\n\r\n\ @author\ Caleb\ Chan,\ Alexander\ Wickman\ |\ original\:David\ J.\ Barnes,\ \r\n\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n
+comment0.text=\r\n\ Simplest\ form\ of\ life.\r\n\ \r\n\ This\ class\ is\ the\ influenza\ class\r\n\ \r\n\ This\ class\ is\ the\ flavobacterium\ class,\ which\ is\ a\ special\ cell\ that\r\n\ changes\ behaviour\ as\ time\ progresses.\ Influenza\ is\ initially\ dead\r\n\ for\ three\ generations,\ then\ becomes\ alive.\r\n\ \r\n\r\n\ @author\ Caleb\ Chan,\ Alexander\ Wickman\ |\ original\:David\ J.\ Barnes,\ \r\n\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n
 comment1.params=field\ location\ col
 comment1.target=Influenza(Field,\ Location,\ java.awt.Color)
 comment1.text=\r\n\ Create\ a\ new\ Influenza.\r\n\r\n\ @param\ field\ The\ field\ currently\ occupied.\r\n\ @param\ location\ The\ location\ within\ the\ field.\r\n
