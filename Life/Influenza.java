@@ -41,19 +41,19 @@ public class Influenza extends Cell {
         if (genCounts == 1 && neighbours.size() == 3){
             setNextState(true);
         }
-        else{
+        else if (genCounts ==2){
             genCounts-=1;
             return;
         }
         if (isAlive()){
             setColor(Color.GRAY);
-            //if no neighbours, virus dies
+            //if 2 or less neighbours, influenza dies
             if (neighbours.size() == 1)
             setNextState(false);
+            //if
+            if (neighbours.size() <=2)
+            setNextState(false);
             
-        }
-        else{
-            setColor(Color.LIGHT_GRAY);
         }
     }
 }

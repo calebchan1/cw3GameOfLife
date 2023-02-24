@@ -24,7 +24,7 @@ public class Simulator {
      // The probability that a Flavobacterium is alive
     private static final double FLAVOBACTERIUM_ALIVE_PROB = 0.05;
     // The probability that a Flavobacterium is alive
-    private static final double INFLUENZA_ALIVE_PROB = 0.05;
+    private static final double INFLUENZA_ALIVE_PROB = 0.01;
 
     // List of cells in the field.
     private List<Cell> cells;
