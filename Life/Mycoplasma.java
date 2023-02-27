@@ -32,15 +32,10 @@ public class Mycoplasma extends Cell {
         //assume all cells will not live onto next state
         setNextState(false);
         if (isAlive()) {
-            //if cell has fewer than two neighbours it will die
-            if (neighbours.size() < 2)
-                setNextState(false);
             //if cell has two or more live nieghbours it will live on to next gen
-            else if (neighbours.size()==2 || neighbours.size()==3)
+            if (neighbours.size()==2 || neighbours.size()==3)
                 setNextState(true);
-            //if cell has more than three neighbours it will die
-            else 
-                setNextState(false);
+            //in all other cases, cell will die
         }
         else{
             //dead cell becomes alive if has exactly three neighbours
