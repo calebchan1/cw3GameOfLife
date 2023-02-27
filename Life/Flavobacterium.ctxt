@@ -6,5 +6,5 @@ comment1.target=Flavobacterium(Field,\ Location,\ java.awt.Color)
 comment1.text=\r\n\ Create\ a\ new\ Flavobacterium.\r\n\r\n\ @param\ field\ The\ field\ currently\ occupied.\r\n\ @param\ location\ The\ location\ within\ the\ field.\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ This\ is\ how\ the\ Flavobacterium\ decides\ if\ it's\ alive\ or\ not\r\n\ Following\ rule\ set\ applies\:\r\n\ If\ no\ neighbours\ it\ dies\r\n\ If\ 2\ or\ more\ neighbours\ it\ lives\ on\ and\ changes\ to\ pink\r\n\ If\ 1\ neighbour\ it\ lives\ on\ and\ changes\ to\ red\r\n\ If\ bacteria\ is\ dead\ and\ there\ are\ exactly\ 2\ neighbours,\ bacteria\ comes\r\n\ back\ to\ life\r\n
+comment2.text=\r\n\ This\ is\ how\ the\ Flavobacterium\ decides\ if\ it's\ alive\ or\ not\r\n\r\n\ If\ no\ neighbours\ it\ dies\r\n\ If\ 2\ or\ more\ neighbours\ it\ lives\ on\ and\ changes\ to\ pink\r\n\ If\ 1\ neighbour\ it\ lives\ on\ and\ changes\ to\ red\r\n\ If\ bacteria\ is\ dead\ and\ there\ are\ exactly\ 3\ neighbours,\ bacteria\ comes\r\n\ back\ to\ life\r\n
 numComments=3

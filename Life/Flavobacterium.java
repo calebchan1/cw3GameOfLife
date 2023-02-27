@@ -27,11 +27,11 @@ public class Flavobacterium extends Cell {
 
     /**
      * This is how the Flavobacterium decides if it's alive or not
-     * Following rule set applies:
+     *
      * If no neighbours it dies
      * If 2 or more neighbours it lives on and changes to pink
      * If 1 neighbour it lives on and changes to red
-     * If bacteria is dead and there are exactly 2 neighbours, bacteria comes
+     * If bacteria is dead and there are exactly 3 neighbours, bacteria comes
      * back to life
      */
     public void act() {

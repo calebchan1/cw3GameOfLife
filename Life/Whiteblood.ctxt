@@ -6,5 +6,5 @@ comment1.target=Whiteblood(Field,\ Location,\ java.awt.Color)
 comment1.text=\r\n\ Create\ a\ new\ Whiteblood.\r\n\r\n\ @param\ field\ The\ field\ currently\ occupied.\r\n\ @param\ location\ The\ location\ within\ the\ field.\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ This\ is\ how\ the\ Whiteblood\ decides\ if\ it's\ alive\ or\ not.\r\n\ The\ whiteblood\ cell\ targets\ surrounding\ alive\ influenza\ cells.\r\n\ It\ will\ only\ remain\ alive\ if\ it\ has\ two\ or\ three\ neighbours.\ If\r\n\ it\ has\ 4\ neighbours\ it\ will\ die.\r\n\ \r\n
+comment2.text=\r\n\ This\ is\ how\ the\ Whiteblood\ decides\ if\ it's\ alive\ or\ not.\r\n\ The\ whiteblood\ cell\ targets\ surrounding\ alive\ influenza\ cells.\r\n\ It\ will\ only\ remain\ alive\ if\ it\ has\ two\ or\ three\ neighbours.\r\n\ For\ any\ other\ amount\ of\ neighbours\ it\ will\ die.\r\n\ \r\n\ If\ it\ is\ currently\ dead,\ two\ or\ more\ of\ it's\ neighbours\ must\ be\ \r\n\ influenza\ in\ order\ to\ come\ alive\r\n\r\n
 numComments=3

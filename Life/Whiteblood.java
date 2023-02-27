@@ -28,26 +28,39 @@ public class Whiteblood extends Cell {
     /**
      * This is how the Whiteblood decides if it's alive or not.
      * The whiteblood cell targets surrounding alive influenza cells.
-     * It will only remain alive if it has two or three neighbours. If
-     * it has 4 neighbours it will die.
+     * It will only remain alive if it has two or three neighbours.
+     * For any other amount of neighbours it will die.
      * 
+     * If it is currently dead, two or more of it's neighbours must be 
+     * influenza in order to come alive
+     *
      */
     public void act() {
         List<Cell> neighbours = getField().getLivingNeighbours(getLocation());
-        //assume all cells will not live onto next state
-        setNextState(false);
         if (isAlive()) {
-            if (neighbours.size()>=2)
-                setNextState(true);
-            else  if (neighbours.size() == 4)
+            if (neighbours.size() == 4 || neighbours.size()<=1)
                 setNextState(false);
+            else
+                setNextState(true);
+        }
+        else{
+            //two neighbours must be influenza to come alive
+            int count = 0;
+            for (Cell cell:neighbours){
+                if (cell instanceof Influenza){
+                    count++;
+                }
+            }
+            if (count >= 2)
+                setNextState(true);
         }
         //check for surrounding influenza cells
         for (Cell cell : neighbours){
-            //if cell is influenza, ione influenza cell dies at a time.
-            if (cell instanceof Influenza)
+            //if cell is influenza, one influenza cell dies at a time.
+            if (cell instanceof Influenza){
                 cell.setNextState(false);
-            return;
+                return;
+            }
         }
 
     }

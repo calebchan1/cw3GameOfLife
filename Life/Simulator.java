@@ -24,9 +24,9 @@ public class Simulator {
      // The probability that a Flavobacterium is alive
     private static final double FLAVOBACTERIUM_ALIVE_PROB = 0.05;
     // The probability that a Influenza is alive
-    private static final double INFLUENZA_ALIVE_PROB = 0.01;
+    private static final double INFLUENZA_ALIVE_PROB = 0.15;
     // The probability that a White blood cell is alive
-    private static final double WHITEBLOOD_ALIVE_PROB = 0.01;
+    private static final double WHITEBLOOD_ALIVE_PROB = 0.05;
     
 
     // List of cells in the field.
@@ -155,7 +155,7 @@ public class Simulator {
                         flavo.setDead();
                         cells.add(flavo);
                         //adding influenza if dead cell was created
-                        Influenza infl = new Influenza(field, location, Color.LIGHT_GRAY);
+                        Influenza infl = new Influenza(field, location, Color.GRAY);
                         if (rand.nextDouble() <= INFLUENZA_ALIVE_PROB) {
                             cells.add(infl);
                         }

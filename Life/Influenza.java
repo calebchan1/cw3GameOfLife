@@ -6,10 +6,9 @@ import java.util.Random;
  * Simplest form of life.
  * 
  * This class is the influenza class
- * 
- * This class is the flavobacterium class, which is a special cell that
- * changes behaviour as time progresses. Influenza is initially dead
- * for three generations, then becomes alive.
+ * Secial cell that changes behaviour as time progresses. 
+ * Influenza is initially dead for a random number of generations, 
+ * then becomes alive.
  * 
  *
  * @author Caleb Chan, Alexander Wickman | original:David J. Barnes, 
@@ -18,7 +17,7 @@ import java.util.Random;
 
 public class Influenza extends Cell {
     //initial generation counts before becoming alive
-    private int genCounts = 3;
+    private int genCounts;
     
     /**
      * Create a new Influenza.
@@ -30,10 +29,20 @@ public class Influenza extends Cell {
         super(field, location, col);
         //by default influenza is dead
         setDead();
+        //random generation counts that influenza is dormant for
+        //random generation counts between 3 to 5
+        Random rn = new Random();
+        genCounts = rn.nextInt(5) + 3;
     }
 
     /**
      * This is how the Influenza decides if it's alive or not
+     * 
+     * After random number of generations, the influenza becomes 
+     * alive.
+     * If it is alive, it will die if it has 2 or less neighbours.
+     * If it is dead, it will come alive if it has at least 1
+     * neighbour AND none of it's neighbours are white blood cells
      */
     public void act() {
         List<Cell> neighbours = getField().getLivingNeighbours(getLocation());
@@ -42,7 +51,7 @@ public class Influenza extends Cell {
             //comes alive next generation, if it has three neighbours
             setNextState(true);
         }
-        else if (genCounts ==2 || genCounts == 3){
+        else if (genCounts>=2){
             genCounts-=1;
             return;
         }
@@ -51,6 +60,18 @@ public class Influenza extends Cell {
             //influenza dies if it has 2 or less neighbours
             if (neighbours.size() <=2)
             setNextState(false);
+        }
+        else{
+            //influenza comes alive if it has at least 1 neighbour
+            //AND the neighbours does not contain a white blood 
+            //cell
+            if (neighbours.size()>=1){
+                for (Cell cell:neighbours){
+                    if (cell instanceof Whiteblood)
+                    return;
+                }
+                setNextState(true);
+            }   
         }
     }
 }
