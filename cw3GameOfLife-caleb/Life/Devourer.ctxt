@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Devourer
+comment0.text=\r\n\ Devourer\ is\ a\ cell\ that\ can\ kill(devour)\ other\ cells\r\n\ If\ the\ Devourer\ has\ 1\ neighbour\ and\ is\ alive,\ it\ will\ devour\ it\ \r\n\ It\ cannot\ devour\ another\ cell\ if\ it\ has\ more\ than\ 1\ neighbour\r\n\ If\ the\ Devourer\ is\ dead\ and\ has\ 1\ neighbour,\ it\ will\ come\ back\ to\ life\r\n\ If\ the\ Devourer\ has\ no\ neighbours\ or\ has\ not\ devoured\ in\ 5\ generations,\ it\ will\ die\r\n\ Devourers\ can\ kill\ eachother\r\n\ \r\n\ Due\ to\ continuity,\ it\ is\ necessary\ to\ create\ a\ new\ devoured\ variable\ in\ the\ Cell\ abstract\ class\ to\ determine\ death\r\n\r\n\ @author\ Caleb\ Chan,\ Alexander\ Wickman\ |\ original\:David\ J.\ Barnes,\ \r\n\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n
+comment1.params=field\ location\ col
+comment1.target=Devourer(Field,\ Location,\ java.awt.Color)
+comment1.text=\r\n\ Create\ a\ new\ trojan\r\n
+comment2.params=
+comment2.target=void\ act()
+numComments=3
