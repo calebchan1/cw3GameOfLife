@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SimulatorView
-comment0.text=\r\n\ A\ graphical\ view\ of\ the\ simulation\ grid.\ The\ view\ displays\ a\ rectangle\ for\r\n\ each\ location.\ Colors\ for\ each\ type\ of\ life\ form\ can\ be\ defined\ using\ the\r\n\ setColor\ method.\r\n\r\n\ @author\ David\ J.\ Barnes,\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n\ @version\ 2022.01.06\ (1)\r\n
+comment0.text=\r\n\ A\ graphical\ view\ of\ the\ simulation\ grid.\ The\ view\ displays\ a\ rectangle\ for\r\n\ each\ location.\ Colors\ for\ each\ type\ of\ life\ form\ can\ be\ defined\ using\ the\r\n\ setColor\ method.\r\n\r\n\ @author\ Caleb\ Chan,\ Alexander\ Wickman\ |\ original\:David\ J.\ Barnes,\ \r\n\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n
 comment1.params=height\ width
 comment1.target=SimulatorView(int,\ int)
 comment1.text=\r\n\ Create\ a\ view\ of\ the\ given\ width\ and\ height.\r\n\ @param\ height\ The\ simulation's\ height.\r\n\ @param\ width\ \ The\ simulation's\ width.\r\n

@@ -23,7 +23,15 @@ public abstract class Cell {
 
     // The cell's color
     private Color color = Color.white;
-
+    
+    // The cell's future infection status
+    private boolean willInfect;
+    
+    // The cell's current infection status
+    private boolean isInfected;
+    
+    // The cell's devour status
+    private boolean isDevoured;
 
     /**
      * Create a new cell at location in field.
@@ -34,6 +42,9 @@ public abstract class Cell {
     public Cell(Field field, Location location, Color col) {
         alive = true;
         nextAlive = false;
+        isInfected = false;
+        willInfect = false;
+        isDevoured = false;
         this.field = field;
         setLocation(location);
         setColor(col);
@@ -44,13 +55,42 @@ public abstract class Cell {
      * next generation.
      */
     abstract public void act();
-
+    
+    // Set infection status
+    public void setWillInfect(boolean val) {
+        willInfect = val;
+    }
+    
+    // Return infection status
+    public boolean isInfected(){
+        return isInfected;
+    }
+    
+    // Ran once the cell is infected for 1 generation
+    public void infectedAct() {
+        nextAlive = false;
+        isInfected = false;
+        // Only infects other cells if the cell itself is alive
+        if (alive){
+            List<Cell> neighbours = getField().getLivingNeighbours(getLocation());
+            // Infects all living neighbours
+            for (Cell cell: neighbours){
+                cell.setWillInfect(true);
+            }
+        }
+    }
+    
     /**
      * Check whether the cell is alive or not.
      * @return true if the cell is still alive.
      */
     protected boolean isAlive() {
         return alive;
+    }
+    
+    // Set's devoured value
+    public void setDevoured(boolean val) {
+        isDevoured = val;
     }
 
     /**
@@ -71,7 +111,23 @@ public abstract class Cell {
      * Changes the state of the cell
      */
     public void updateState() {
+      // Begin devour action
+      actDevour();
       alive = nextAlive;
+      // Update infect state
+      isInfected = willInfect;
+      willInfect = false;
+    }
+    
+    /**
+     * Kills devoured cells
+     * The devour process begins after each cell has completed their actions
+     */
+    private void actDevour() {
+        if (isDevoured){
+            nextAlive = false;
+        }
+        isDevoured = false;
     }
 
     /**
