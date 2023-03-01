@@ -28,7 +28,7 @@ public class Simulator {
     // The probability that a White blood cell is alive
     private static final double WHITEBLOOD_ALIVE_PROB = 0.07;
     // The probability that a Melanocyte cell is alive
-    private static final double MELANOCYTE_ALIVE_PROB = 0.02;
+    private static final double MELANOCYTE_ALIVE_PROB = 0.06;
     
 
     // List of cells in the field.
@@ -174,7 +174,7 @@ public class Simulator {
                                 cells.add(wb);
                                 //adding melanocyte cell if dead cell was created
                                 Melanocyte mc = new Melanocyte(field, location, Color.BLACK);
-                                if (rand.nextDouble() <= WHITEBLOOD_ALIVE_PROB) {
+                                if (rand.nextDouble() <= MELANOCYTE_ALIVE_PROB) {
                                     cells.add(mc);
                                 }
                                 else {
