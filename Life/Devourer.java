@@ -17,6 +17,7 @@ import java.util.Random;
  */
 public class Devourer extends Cell
 {
+    // Number of generations in which it has not devoured
     private int notDevoured;
     /**
      * Create a new trojan

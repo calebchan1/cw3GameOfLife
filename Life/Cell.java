@@ -56,17 +56,26 @@ public abstract class Cell {
      */
     abstract public void act();
     
-    // Set infection status
+    /** Set infection status
+     * Only set value as true to overcome a logic issue
+     */
     public void setWillInfect(boolean val) {
-        willInfect = val;
+        if (val){
+            willInfect = true;
+        }
     }
     
-    // Return infection status
+    /** Return infection status
+     * 
+     */
     public boolean isInfected(){
         return isInfected;
     }
     
-    // Ran once the cell is infected for 1 generation
+    /**
+     * How an infected cell acts
+     * Ran once the cell is infected for 1 generation
+     */
     public void infectedAct() {
         nextAlive = false;
         isInfected = false;
@@ -88,7 +97,9 @@ public abstract class Cell {
         return alive;
     }
     
-    // Set's devoured value
+    /**
+     * Set's devoured value
+     */
     public void setDevoured(boolean val) {
         isDevoured = val;
     }
