@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Melanocyte
+comment0.text=\r\n\ Simplest\ form\ of\ life.\ This\ is\ the\ Melanocyte\ class.\r\n\r\n\ Non\ deterministic\ cell\ that\ executes\ a\ rule\ froma\ \ given\ set\ in\r\n\ a\ random\ manner.\r\n\r\n\ @author\ Caleb\ Chan,\ Alexander\ Wickman\ |\ original\:David\ J.\ Barnes,\ \r\n\ Michael\ K\u00F6lling\ &\ Jeffery\ Raphael\r\n
+comment1.params=field\ location\ col
+comment1.target=Melanocyte(Field,\ Location,\ java.awt.Color)
+comment1.text=\r\n\ Create\ a\ new\ Melanocyte.\r\n\r\n\ @param\ field\ The\ field\ currently\ occupied.\r\n\ @param\ location\ The\ location\ within\ the\ field.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ This\ is\ how\ the\ Melanocyte\ decides\ if\ it's\ alive\ or\ not\r\n\ Executes\ a\ rule\ randomly\ from\ a\ given\ set\ of\ rules.\ \r\n\ \r\n\ Ruleset\ whilst\ alive\:\r\n\ Assumed\ to\ always\ die\ unless\ rule\ says\ otherwise\r\n\ 10%\ -\ Changes\ colour\ to\ blue\r\n\ 10%\ -\ Changes\ colour\ to\ black\ (default\ colour)\r\n\ 20%\ -\ If\ two\ or\ more\ of\ its\ neighbours\ is\ mycoplasma\ it\ will\r\n\ die\ \r\n\ 30%\ -\ If\ it\ has\ exactly\ 1\ neighbour\ it\ will\ live\ on\r\n\ 30%\ -\ If\ it\ has\ exactly\ 3\ neighbours\ it\ will\ live\ on.\r\n\ \r\n\ Ruleset\ whilst\ dead\:\r\n\ 40%\ -\ Comes\ back\ to\ alive\ in\ presence\ of\ white\ blood\ cell\r\n\ 60%\ -\ Comes\ back\ to\ alive\ with\ 3\ or\ more\ neighbours.\r\n
+numComments=3

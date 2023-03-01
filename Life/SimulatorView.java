@@ -9,8 +9,8 @@ import java.util.Map;
  * each location. Colors for each type of life form can be defined using the
  * setColor method.
  *
- * @author David J. Barnes, Michael Kölling & Jeffery Raphael
- * @version 2022.01.06 (1)
+ * @author Caleb Chan, Alexander Wickman | original:David J. Barnes, 
+ * Michael Kölling & Jeffery Raphael
  */
 
 public class SimulatorView extends JFrame {
